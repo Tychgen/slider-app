@@ -94,3 +94,19 @@ function togglePause(): void {
 leftButton.addEventListener('click', () => updateSlider('left'));
 playPauseButton.addEventListener('click', togglePause);
 rightButton.addEventListener('click', () => updateSlider('right'));
+
+const interval: NodeJS.Timeout = setInterval(() => {
+  if (!pause) {
+    moveRight();
+  }
+}, 2000);
+
+function moveRight(): void {
+  slides[i].className = 'slide';
+  i = (i + 1) % slides.length;
+  slides[i].className = 'slide active';
+  let Xvalue: number = -160 * i;
+  if (slider) {
+    slider.style.transform = `translateX(${Xvalue}px)`;
+  }
+}
