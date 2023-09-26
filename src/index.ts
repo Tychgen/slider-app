@@ -16,3 +16,6 @@ async function getCatImages(): Promise<CatImage[]> {
     throw error;
   }
 }
+
+let i: number = 0;
+let pause: boolean = false;
