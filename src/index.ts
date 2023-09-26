@@ -90,3 +90,7 @@ function togglePause(): void {
     }
   }
 }
+
+leftButton.addEventListener('click', () => updateSlider('left'));
+playPauseButton.addEventListener('click', togglePause);
+rightButton.addEventListener('click', () => updateSlider('right'));
