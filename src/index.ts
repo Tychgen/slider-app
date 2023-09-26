@@ -77,3 +77,16 @@ function updateSlider(direction: 'left' | 'right'): void {
     slider.style.transform = `translateX(${Xvalue}px)`;
   }
 }
+
+function togglePause(): void {
+  let state: HTMLSpanElement | null = document.querySelector('.icon');
+  if (state) {
+    if (state.innerHTML == 'pause') {
+      state.innerHTML = 'play_arrow';
+      pause = true;
+    } else {
+      state.innerHTML = 'pause';
+      pause = false;
+    }
+  }
+}
