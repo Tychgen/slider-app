@@ -63,3 +63,17 @@ async function displayCatImages() {
 }
 
 displayCatImages();
+
+function updateSlider(direction: 'left' | 'right'): void {
+  slides[i].className = 'slide';
+  if (direction === 'left') {
+    i = (i - 1 + slides.length) % slides.length;
+  } else {
+    i = (i + 1) % slides.length;
+  }
+  slides[i].className = 'slide active';
+  let Xvalue: number = -160 * i;
+  if (slider) {
+    slider.style.transform = `translateX(${Xvalue}px)`;
+  }
+}
